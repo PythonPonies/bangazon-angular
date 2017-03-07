@@ -6,7 +6,9 @@ function($scope, $http, $location) {
     password: "",
     email: "",
     first_name: "",
-    last_name: ""
+    last_name: "",
+    phone: "",
+    shipping_address: ""
   };
 
   $scope.register = function() {
@@ -22,12 +24,14 @@ function($scope, $http, $location) {
           "password": $scope.user.password,
           "email": $scope.user.email,
           "first_name": $scope.user.first_name,
-          "last_name": $scope.user.last_name
+          "last_name": $scope.user.last_name,
+          "phone": $scope.user.phone,
+          "shipping_address": $scope.user.shipping_address
         }
       }).then(
         res => {
           if (res.data.success === true) {
-              $location.path('/products');
+              $location.path('/');
           }
         },
         console.error
