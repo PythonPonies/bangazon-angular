@@ -2,14 +2,18 @@ angular.module('Bangazon-Mobile').controller('AuthController',
 function($scope, $http, $location) {
 
   $scope.user = {
-    username: "steve",
-    password: "pass1234"
+    username: "",
+    password: "",
+    email: "",
+    first_name: "",
+    last_name: ""
   };
 
   $scope.register = function() {
       $http({
-        url: "http://localhost:8000/register",
+        url: "http://localhost:8000/register/",
         method: "POST",
+        withCredentials: false,
         headers: {
           "Content-Type": "application/x-www-form-urlencoded"
         },
