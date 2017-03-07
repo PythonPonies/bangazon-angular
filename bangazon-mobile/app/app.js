@@ -15,29 +15,28 @@ let app = angular.module("Bangazon-Mobile", ["ngRoute"])
 
           $routeProvider
             .when('/', {
-              controller: 'HomeController',
-              templateUrl: 'Bangazon-Mobile/index.html'
+              controller: 'AuthController',
+              templateUrl: '/app/view/home.html'
             })
             .when('/product-detail', {
               controller: 'ProductDetailController',
-              templateUrl: 'Bangazon-Mobile/view/product-detail.html'
+              templateUrl: '/app/view/product-detail.html'
             })
             .when('/login', {
-              controller: 'LoginController',
-              templateUrl: 'Bangazon-Mobile/view/login.html'
+              controller: 'AuthController',
+              templateUrl: '/app/view/login.html'
             })
             .when('/sell-product', {
               controller: 'SellProductController',
-              templateUrl: 'Bangazon-Mobile/view/sell-product.html'
+              templateUrl: '/app/view/sell-product.html'
             })
             .when('/register', {
-              controller: 'RegisterController',
-              templateUrl: 'Bangazon-Mobile/view/register.html'
+              controller: 'AuthController',
+              templateUrl: '/app/view/register.html'
             })
-
             .when('/cart', {
               controller: 'CartController',
-              templateUrl: 'Bangazon-Mobile/view/cart.html'
+              templateUrl: '/app/view/cart.html'
             });
 
       }
@@ -51,9 +50,9 @@ let app = angular.module("Bangazon-Mobile", ["ngRoute"])
 
         return {
           getApiRoot () {
-            return httpGet.then(res => res.data)
+            return httpGet.then(res => res.data);
           }
-        }
+        };
       }
     ]);
 
