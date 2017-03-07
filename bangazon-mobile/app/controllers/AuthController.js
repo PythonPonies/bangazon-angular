@@ -41,7 +41,7 @@ function($scope, $http, $location) {
 
   $scope.login = function() {
       $http({
-        url: "http://localhost:8000/login",
+        url: "http://localhost:8000/login/",
         method: "POST",
         withCredentials: false,
         headers: {
@@ -54,7 +54,7 @@ function($scope, $http, $location) {
       }).then(
         res => {
           if (res.data.success === true) {
-              $location.path('/products');
+              $location.path('/');
           }
         },
         console.error
